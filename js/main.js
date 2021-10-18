@@ -8,13 +8,14 @@ const products = [
 //Добавить в выводе изображение
 const renderProduct = (item) => {
     return `<div class="product-item">
+                <img src= "https://static.tildacdn.com/tild6365-3435-4366-a261-306434376661/Screenshot_17.jpg" height=150>
                 <h3>${item.title}</h3>
-                <p>${item.price}</p>
+                <p>цена: ${item.price} р.</p>
                 <button class="buy-btn">Купить</button>
             </div>`
 };
 const renderPage = list => {
-    const productsList = list.map(item => renderProduct(item));
+    const productsList = list.map(item => renderProduct(item)).join('');
     console.log(productsList);
     document.querySelector('.products').innerHTML = productsList;
 };
